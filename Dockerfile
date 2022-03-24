@@ -1,4 +1,4 @@
-FROM alpine:3.10 AS builder
+FROM alpine:3.14.4 AS builder
 
 ADD . /opt/carbon-c-relay-build
 WORKDIR /opt/carbon-c-relay-build
@@ -7,7 +7,7 @@ RUN \
   apk add --no-cache git bc build-base curl automake autoconf libtool && \
   ./configure && make
 
-FROM alpine:3.10
+FROM alpine:3.14.4
 
 MAINTAINER Fabian Groffen
 
